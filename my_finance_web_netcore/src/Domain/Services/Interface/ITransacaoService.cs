@@ -8,6 +8,7 @@ namespace myfinance_web_netcore.Domain.Services.Interfaces
         void Salvar(TransacaoModel model);
         TransacaoModel RetornarRegistro(int id);
         void Excluir(int id);
+        
         RelatorioTransacoesModel PegarPorPeriodo(DateTime dataInicio, DateTime dataFim);
     }
 }
