@@ -1,48 +1,41 @@
+@model TransacaoModel
 @{
-  ViewData["Title"] = "Plano de Contas";
+    ViewData["Title"] = "Registro de Transação Financeira";
 }
+<h2>@ViewData["Title"]</h2>
+<form asp-controller="Transacao" asp-action="Cadastro" method="post">
+    <div class="container">
+        <div class="mb-3">
+            <label class="form-label">Data</label>
+            <input type="hidden" class="form-control" id="Id" asp-for="Id" />
+            <input type="date" class="form-control" id="Data" asp-for="Data" />
+            <input type="hidden" class="form-control" id="txtId" asp-for="Id" />
+            <input type="date" class="form-control" id="txtData" asp-for="Data" />
+        </div>
 
-<h1>@ViewData["Title"]</h1>
+        <div class="mb-3">
+            <label class="form-label">Valor</label>
+            <input type="text" class="form-control" id="Valor" asp-for="Valor" step="0.01" />
+            <input type="text" class="form-control" id="tctValor" asp-for="Valor" step="0.01" />
+        </div>
 
-<button type="button" class="btn btn-outline-success btn-lg" onclick="Cadastro()">Criar item de Plano de Conta</button>
-<hr />
-<table class="table table-success table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Descrição</th>
-      <th scope="col">Tipo</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    @{
-      foreach (var item in (List<PlanoContaModel>)ViewBag.ListaPlanoConta)
-      {
-        <tr>
-          <td>@item.Id</td>
-          <td>@item.Descricao</td>
-          <td>@item.Tipo</td>
-          <td><button type="button" class="btn btn-outline-warning" onclick="Editar(@item.Id.ToString())">Editar</button>
-          </td>
-          <td><button type="button" class="btn btn-outline-danger" onclick="Excluir(@item.Id.ToString())">Excluir</button></td>
-        </tr>
-      }
-    }
-  </tbody>
-</table>
+        <div class="mb-3">
+            <label class="form-label">Item Plano de Conta</label>
+            @Html.DropDownListFor(m => m.PlanoContaId, Model.PLanoContas, new{@class="form-select"})
+            @Html.DropDownListFor(m => m.PlanoContaId, Model.PlanoContas, new{@class="form-select"})
+        </div>
 
-<script>
-  function Excluir(id) {
-    window.location.href = "../PlanoConta/Excluir/" + id
-  }
+        <div class="mb-3">
+            <label class="form-label">Histórico</label>
+            <input type="text" class="form-control" id="Historico" asp-for="Historico" />
+            <input type="text" class="form-control" id="txtHistorico" asp-for="Historico" />
+        </div>
 
-  function Editar(id) {
-    window.location.href = "../PlanoConta/Cadastro/" + id
-  }
-
-  function Cadastro() {
-    window.location.href = "../PlanoConta/Cadastro/"
-  }
-</script>
+        <div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a role="button" href="/Transacao/Index" type="button" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-outline-primary">Salvar</button>
+            <a role="button" href="/Transacao/Index" type="button" class="btn btn-outline-secondary">Cancelar</a>
+        </div>
+    </div>
+</form>
