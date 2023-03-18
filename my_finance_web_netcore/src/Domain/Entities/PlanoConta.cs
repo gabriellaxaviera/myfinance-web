@@ -1,3 +1,4 @@
+namespace myfinance_web_netcore.Domain.Entities
 {
     public class PlanoConta
     {
