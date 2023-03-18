@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using myfinance_web_netcore.Domain.Services.Interfaces;
 using myfinance_web_netcore.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -18,7 +12,6 @@ namespace myfinance_web_netcore.Controllers
         private readonly ITransacaoService _transacaoService;
         private readonly IPlanoContaService _planoContaService;
 
-        public TransacaoController(ILogger<PlanoContaController> logger)
         public TransacaoController(
             ILogger<PlanoContaController> logger, 
             ITransacaoService transacaoService, 
@@ -37,13 +30,11 @@ namespace myfinance_web_netcore.Controllers
         }
         [HttpGet]
         [Route("Cadastro")]
-        public IActionResult Cadastro()
         [Route("Cadastro/{id}")]
         public IActionResult Cadastro(int? id)
         {
-            return View();
             var model = new TransacaoModel();
-
+            
             if (id != null){
                 model = _transacaoService.RetornarRegistro((int)id);
             }

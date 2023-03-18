@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using myfinance_web_netcore.Models;
-using myfinance_web_netcore;
+using myfinance_web_netcore.Domain.Services.Interfaces;
 
 namespace myfinance_web_netcore.Controllers
 {
