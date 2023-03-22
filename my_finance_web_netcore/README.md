@@ -1,17 +1,24 @@
-# myfinance-web-netcore
+# MY FINANCE
+
 MyFinance - Projeto do Curso de Pós-Graduação em Engenharia de Software da PUC-MG
 
-###DER - Diagrama e Entidades e Relacionamento
+Grupo 10:
+- Braitner
+- Gabriella
+- Sharley
+- Nathália
+
+### **DER - Diagrama e Entidades e Relacionamento**
 
 <img src='./docs/DER.png'>
 
-###Arquitetura:
+### **Arquitetura**
 
 A aplicação MyFinance utiliza a arquitetura MVC ((Model - View - Controller))  Neste modelo, quando um usuário realiza uma requisição através da interface gráfica (View), a camada de Controller comunica a Model, a qual irá executar a operação e retornar o resultado esperado. Em posse disso, o intermediador (Controller) repassa a informação para a View. Dessa forma, o MVC traz como benefício o isolamento das camadas de negócio e de interface com o usuário, o que propicia maior flexibilidade e possibilidade de reuso das classes.
 
 <img src='./docs/diagramaMVC.png'>
 
-###Tecnologias:
+### **Tecnologias**
 
 * Foi utlizado framework Netcore com C#, 
 * banco de dados relacional SQL Server 2019
@@ -19,7 +26,7 @@ A aplicação MyFinance utiliza a arquitetura MVC ((Model - View - Controller)) 
 * Última versão do C# extensions, o qual deve ser instalado no Visual Studio Code
 * Git e Github
 
-###Start Projeto
+### **Start Projeto**
 
 Acesse o reposítório através do <a href="https://github.com/gabriellaxaviera/myfinance-web">Link</a>
 
@@ -44,7 +51,7 @@ Para acessar a aplicação no navegador copie o caminho indicado e cole no naveg
 
 <img src='./docs/terminal2.jpg'>
 
-###Aplicação
+## **Aplicação**
 
 **Tela Inicial**
 <img src='./docs/pagina_inicial.jpg'>
@@ -64,16 +71,16 @@ Para acessar a aplicação no navegador copie o caminho indicado e cole no naveg
 
 <img src='./docs/registrarTransacoes.jpg'>
 
-### Implementação 
+### **Implementação**
 
  aplicação **MyFinance** foi feita para realização dos controles de registro de  transações  financeiras para assim melhorar a  acuracidade dos pagamentos realizadosE melhor visualização dos relatórios financeiros através dos relatorios implantado no requisito RF103 
 
 
 <img src='./docs/RF103.jpg'>
 
-#### Resultado implmentação
+### **Resultado implmentação**
 
-Foi necessario realizar a implementação de acordo com o requisito **RF103**
+Foi necessario realizar a implementação de acordo com o requisito ***RF103***
 
 **Relatorio por período**
 <img src='./docs/relatorios.jpeg.jpg'>
