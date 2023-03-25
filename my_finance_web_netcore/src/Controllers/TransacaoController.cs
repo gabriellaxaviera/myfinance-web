@@ -83,5 +83,15 @@ namespace myfinance_web_netcore.Controllers
             ViewBag.DespesasBag = model.TransacaoDespesas.ToString();
             return View(model);
         }
+
+        [HttpGet]
+        [Route("Reports")]
+        public IActionResult Reports()
+        {
+            RelatorioTransacoesModel model = new RelatorioTransacoesModel();
+            model.DataInicio = DateTime.Now;
+            model.DataFim = DateTime.Now;
+            return View(model);
+        }
     }
 }

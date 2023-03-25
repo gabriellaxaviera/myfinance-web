@@ -34,6 +34,7 @@
     </div>
     <br>
     <button type="submit" class="btn btn-outline-success btn-lg">Filtrar</button>
+    <td><button type="button" class="btn btn-outline-success btn-lg" onclick="LoadDraft(@receitas, @despesas);">Gerar Gráfico</button></td>
     
 </form>
 
@@ -73,3 +74,42 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js"></script>
+
+<script>
+    var chart = null;
+    function LoadDraft(r, d) {
+        if (chart != null) {
+            chart.destroy();
+        }
+
+        var dataArray = [  
+            ['City', '2020 Population']  
+        ];
+
+        const data = {
+            labels: [
+                'Receitas',
+                'Despesas'
+            ],
+            datasets: [{
+                label: 'My First Dataset',
+                data: google.visualization.arrayToDataTable(dataArray),
+                backgroundColor: [
+                    'rgb(50, 205, 50)',
+                    'rgb(255, 0, 0)'
+                ],
+                hoverOffset: 4
+            }]
+        };
+
+        const config = {
+            title: 'My Finance by receitas e despesas',
+            type: 'pie',
+            data: data
+        };
+
+        const ctx = document.getElementById('transactionsChart').getContext('2d');
+        const transactionsChart = new Chart(ctx, config);
+        chart = transactionsChart;
+    }
+</script>
